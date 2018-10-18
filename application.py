@@ -2,7 +2,7 @@
 # DevPSU Project 4
 
 
-# --Helper Function piggify()--
+# --Helper Function piggify--
 # Translates a given word to pig latin
 def piggify(word):
     # Get rid of newline character from file, if present
@@ -28,7 +28,7 @@ def piggify(word):
             new_word += word[index]
 
         return new_word + "ay"
-# --End piggify()--
+# --End piggify--
 
 
 # --Main function--
@@ -51,6 +51,10 @@ for text in file:
     for word in words:
         print(word, end=' ')
     print('')
+    for i in range(0, len(words) - 1):
+        word = words[i]
+        words[i] = word.strip('\n')
+    print(words)
 
 # Close the file
 file.close()
