@@ -10,7 +10,12 @@ file = open(filename)
 
 # Read each line of the file individually
 for text in file:
-    print(text)
+    # Split words apart
+    words = text.split(" ")
+    for i in range(0, len(words) - 1):
+        word = words[i]
+        words[i] = word.strip('\n')
+    print(words)
 
 # Close the file
 file.close()
